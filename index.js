@@ -1,12 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 import Data from "./models/dataModel.js";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // get all data
 app.get("/", async (req, res) => {
